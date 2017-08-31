@@ -36,4 +36,23 @@ export class AvatarProvider {
     }).toPromise()
     return resp.json() 
   }
+  async deletePerson(hospcode:string,pid:string){
+    const token = localStorage.getItem('token')
+    const url = `http://192.168.100.112:3000/api/person/${hospcode}/${pid}/?token=${token}`
+    const resp = await this.http.delete(url).toPromise()
+    return resp.json() 
+  }
+  async updatePerson(name:string,lname:string,sex:string,typearea:string,hospcode:string,pid:string){
+    const token = localStorage.getItem('token')
+    const url = `http://192.168.100.112:3000/api/person/?token=${token}`
+    const resp = await this.http.put(url,{
+      name:name,
+      lname:lname,
+      sex:sex,
+      typearea:typearea,
+      hospcode:hospcode,
+      pid:pid
+    }).toPromise()
+    return resp.json() 
+  }
 }

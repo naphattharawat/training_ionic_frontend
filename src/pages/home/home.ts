@@ -1,3 +1,4 @@
+import { EditpersonPage } from './../editperson/editperson';
 import { AddpersonPage } from './../addperson/addperson';
 import { AvatarProvider } from '../../providers/avatar/avatar';
 import { Component } from '@angular/core';
@@ -67,8 +68,8 @@ export class HomePage {
     });
     alert.present();
   }
-  detail(u: any) {
-    this.navCtrl.push(DetailPage, u)
+  edit(u: any) {
+    this.navCtrl.push(EditpersonPage, u)
   }
   scanBarcode() {
     this.barcodeScanner.scan().then((barcodeData) => {

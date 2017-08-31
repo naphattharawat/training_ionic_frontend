@@ -1,3 +1,4 @@
+import { EditpersonPageModule } from './../pages/editperson/editperson.module';
 import { AddpersonPageModule } from './../pages/addperson/addperson.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -31,7 +32,8 @@ import { LoginProvider } from '../providers/login/login';
     SettingPageModule,
     HttpModule,
     LoginPageModule,
-    AddpersonPageModule
+    AddpersonPageModule,
+    EditpersonPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
