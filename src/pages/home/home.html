@@ -1,14 +1,28 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="moph">
+    <button ion-button icon-only (click)="scanBarcode()" color="dark">
+        <ion-icon name="barcode"></ion-icon>
+      </button>
     <ion-title>
-      Ionic Blank
+      HomePage
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content >
+  <ion-searchbar (ionInput)="search($event)"></ion-searchbar>
+  <ion-list no-lines>
+    <button ion-item *ngFor="let a of avatars">
+        <!-- <ion-avatar item-start>
+          <img src="{{a.picture.medium}}">
+        </ion-avatar> -->
+        <h2>{{a.NAME}} {{a.LNAME}}</h2>
+        <p>{{a.HOSPCODE}}</p>
+      </button>
+  </ion-list>
+  <ion-fab right bottom>
+  <button ion-fab color="secondary" (click)="addperson()">
+    <ion-icon name="add"></ion-icon>
+  </button>
+</ion-fab>
 </ion-content>
