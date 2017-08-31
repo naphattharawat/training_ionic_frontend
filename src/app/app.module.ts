@@ -7,6 +7,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { HttpModule } from '@angular/http';
+import { GoogleMaps } from '@ionic-native/google-maps';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -46,7 +47,8 @@ import { LoginProvider } from '../providers/login/login';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AvatarProvider,
     BarcodeScanner,
-    LoginProvider
+    LoginProvider,
+    GoogleMaps
   ]
 })
 export class AppModule {}
